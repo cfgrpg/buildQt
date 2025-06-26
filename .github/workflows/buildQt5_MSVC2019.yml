@@ -10,7 +10,7 @@ env:
 
 jobs:
   windows_msvc_shared_debug:
-    runs-on: windows-latest
+    runs-on: windows-2019
 
     steps:
     # 检出本仓库
