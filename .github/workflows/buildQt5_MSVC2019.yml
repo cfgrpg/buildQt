@@ -36,7 +36,7 @@ jobs:
       run: |
         cd ..  #Directory: D:\a\buildQt
         curl -L -o jom.zip  http://download.qt.io/official_releases/jom/jom.zip
-        unzip -q jom.zip -d ./jom
+        unzip -q jom.zip -d ./jom      
 
     # 安装msvc
     - name: Add MSBuild to PATH
@@ -48,6 +48,9 @@ jobs:
     - name: Setup vsdevenv
       uses: seanmiddleditch/gha-setup-vsdevenv@master
 
+    - name: Set Windows SDK version
+      run: echo "WindowsSDKVersion=10.0.18362.0\\" >> $Env:GITHUB_ENV  
+      
     # 构建Qt
     - name: Build Qt
       run: |
