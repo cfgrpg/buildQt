@@ -47,6 +47,9 @@ jobs:
     # 安装vsdevenv
     - name: Setup vsdevenv
       uses: seanmiddleditch/gha-setup-vsdevenv@master
+      
+    - name: Set Windows SDK version
+      run: echo "WindowsSDKVersion=10.0.18362.0\\" >> $Env:GITHUB_ENV       
 
     # 构建Qt
     - name: Build Qt
