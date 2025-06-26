@@ -51,6 +51,10 @@ jobs:
     - name: Set Windows SDK version
       run: echo "WindowsSDKVersion=10.0.18362.0\\" >> $Env:GITHUB_ENV       
 
+    - name: Check available Visual Studio versions
+      run: |
+        dir "C:\Program Files (x86)\Microsoft Visual Studio"
+    
     # 构建Qt
     - name: Build Qt
       run: |
