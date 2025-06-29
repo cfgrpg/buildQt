@@ -2,7 +2,7 @@
 @cd /d %~dp0
 
 :: 设置Qt版本
-SET QT_VERSION=5.15.16
+SET QT_VERSION=5.15.17
 
 :: 设置MSVC版本代号
 SET MSVC_VERSION=msvc2022_64
@@ -36,7 +36,7 @@ rmdir /s /q "%BUILD_DIR%"
 mkdir "%BUILD_DIR%" && cd /d "%BUILD_DIR%"
 
 :: configure
-call %SRC_QT%\configure.bat -shared -debug -prefix %INSTALL_DIR% -nomake examples -nomake tests -skip qtwebengine -opensource -confirm-license -qt-libpng -qt-libjpeg -qt-zlib -qt-pcre -qt-freetype -schannel -platform win32-msvc
+call %SRC_QT%\configure.bat -shared -debug-and-release -prefix %INSTALL_DIR% -nomake examples -nomake tests -skip qtwebengine -opensource -confirm-license -plugin-sql-sqlite -plugin-sql-odbc -qt-libpng -qt-libjpeg -qt-zlib -qt-pcre -qt-freetype -schannel -opengl -platform win32-msvc
 
 :: 编译、安装
 jom
